@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 
-openai.api_key = ""
+openai.api_key = APIKEY
 txt = st.text_input('Where would you like to see an ant?')
 st.write(f"a  ant in {txt} ")
 
