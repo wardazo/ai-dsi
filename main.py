@@ -2,8 +2,11 @@ import streamlit as st
 import openai
 
 openai.api_key = st.secrets["APIKEY"]
-txt = st.text_input('Where would you like to see an ant?')
-st.write(f"a  ant in {txt} ")
+txt = st.text_input(
+    'Where would you like to see an ant?',
+    help='Eg. "on an ice cream cone" or "in front of big ben"'
+)
+#st.write(f"a  ant in {txt} ")
 
 option = st.selectbox(
     'What type of image would you like',
@@ -13,12 +16,10 @@ btn = st.button('Create')
 
 if btn:
 
-    st.write(f" {option} ")
-
     if option != "None":
-        txt = f"ant in {txt} in {option} style"
+        txt = f"ant {txt} in {option} style"
     else:
-        txt = f"ant in {txt}"
+        txt = f"ant {txt}"
 
     response = openai.Image.create(
         prompt=txt,
