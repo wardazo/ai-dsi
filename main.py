@@ -23,7 +23,7 @@ if btn:
 
     response = openai.Image.create(
         prompt=txt,
-        n=5,
+        n=3,
         size="1024x1024"
     )
 
