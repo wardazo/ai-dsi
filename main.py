@@ -29,5 +29,5 @@ if btn:
 
     image_url = response['data'][0]['url']
     for i in response['data']:
-        print(i['url'])
+        #print(i['url'])
         st.image(i['url'])
